@@ -10,13 +10,13 @@ const giphy = require('giphy-api')({
 
 function App() {
   const [selectedId, setSelectedId] = React.useState("13HgwGsXF0aiGY");
-  const [gifIds, setGifIds] = React.useState(["WuGSL4LFUMQU", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq"]);
+  const [gifIds, setGifIds] = React.useState(["QTAVEex4ANH1pcdg16", "WuGSL4LFUMQU", "HuVCpmfKheI2Q", "u6uAu3yyDNqRq", "OJ0NYhdemsSoF4FCM8", "Q6WPVzFU8LcBWWgQE1", "dp9RfGJ9ehxJu"]);
 
   function fetchGiphy(keyword) {
     giphy.search({
       q: keyword,
       rating: 'g',
-      limit: 12
+      limit: 10
     }, (err, res) => {
       const ids = res.data.map((gif) => gif.id);
       setGifIds(ids);
